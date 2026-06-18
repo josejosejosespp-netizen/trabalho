@@ -3,191 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulte seu Cashback</title>
+    <title>Resgate Verificado</title>
     <style>
-        :root {
-            --primary: #25d366;
-            --secondary: #128c7e;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --accent: #059669;
-        }
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-        }
-        body { 
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            padding: 20px; 
-        }
-        .container { 
-            background: white; 
-            padding: 35px 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 20px 40px rgba(4, 120, 87, 0.1); 
-            max-width: 480px; 
-            width: 100%; 
-        }
-        .header-icon {
-            text-align: center;
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-        h2 { 
-            color: var(--dark); 
-            margin-bottom: 10px; 
-            font-size: 26px; 
-            text-align: center;
-            font-weight: 700;
-        }
-        p { 
-            color: #475569; 
-            font-size: 15px; 
-            text-align: center; 
-            margin-bottom: 30px; 
-            line-height: 1.6; 
-        }
-        .form-group { 
-            margin-bottom: 20px; 
-        }
-        label { 
-            display: block; 
-            margin-bottom: 8px; 
-            color: #334155; 
-            font-weight: 600; 
-            font-size: 14px; 
-        }
-        input { 
-            width: 100%; 
-            padding: 14px; 
-            border: 2px solid #e2e8f0; 
-            border-radius: 10px; 
-            font-size: 15px; 
-            transition: all 0.3s ease; 
-            color: var(--dark);
-        }
-        input:focus { 
-            outline: none; 
-            border-color: var(--primary); 
-            box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.15); 
-        }
-        button { 
-            width: 100%; 
-            background: var(--primary); 
-            color: white; 
-            border: none; 
-            padding: 16px; 
-            border-radius: 10px; 
-            font-size: 16px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
-            margin-top: 10px; 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            min-height: 100vh;
         }
-        button:hover { 
-            background: var(--secondary); 
-            transform: translateY(-1px);
-            box-shadow: 0 6px 15px rgba(18, 140, 126, 0.4);
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            box-sizing: border-box;
         }
-        button:active {
+
+        .status-badge {
+            background-color: #e2fbe8;
+            color: #1e7e34;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .valor-box {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .valor-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .valor-disponivel {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        .instrucoes {
+            text-align: left;
+            margin: 25px 0;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #11998e;
+        }
+
+        .instrucoes h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .instrucoes ol {
+            padding-left: 20px;
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .instrucoes li {
+            margin-bottom: 10px;
+        }
+
+        .instrucoes li:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-download {
+            display: block;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 18px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.6);
+        }
+
+        .btn-download:active {
             transform: translateY(1px);
         }
-        .footer { 
-            text-align: center; 
-            margin-top: 25px; 
-            font-size: 13px; 
-            color: #64748b; 
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* Animação para deixar o botão piscando/pulsando de forma chamativa */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 5px 25px rgba(255, 65, 108, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-icon">💰</div>
-    <h2>Resgate seu Cashback!</h2>
-    <p>Insira seus dados abaixo para realizarmos a análise da sua máquina e liberar o seu valor disponível.</p>
+    <div class="status-badge">✓ SISTEMA ATUALIZADO</div>
+    <h1>Resgate Verificado</h1>
     
-    <form id="cashbackForm">
-        <div class="form-group">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" placeholder="Seu nome completo" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="documento">CPF ou CNPJ</label>
-            <input type="text" id="documento" placeholder="000.000.000-00 ou 00.000.000/0001-00" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="telefone">Telefone com DDD</label>
-            <input type="tel" id="telefone" placeholder="(00) 90000-0000" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="renda">Faturamento Mensal da sua Máquina</label>
-            <input type="text" id="renda" placeholder="Ex: R$ 15.000,00" required>
-        </div>
-        
-        <button type="submit">
-            <!-- Ícone nativo do WhatsApp -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.004 2c-5.517 0-9.994 4.476-9.994 9.993 0 1.763.458 3.48 1.332 5l-1.416 5.176 5.297-1.389c1.472.802 3.126 1.222 4.78 1.222 5.518 0 9.995-4.476 9.995-9.994S17.522 2 12.004 2zm5.72 13.042c-.244.688-1.22 1.261-1.682 1.348-.461.086-.924.161-2.956-.638-2.597-1.023-4.246-3.664-4.376-3.835-.13-.171-1.045-1.388-1.045-2.648 0-1.26.65-1.881.88-2.122.228-.24.503-.3.668-.3.164 0 .327.001.47.008.15.006.353-.057.553.424.204.491.7.1.7.534c0 .32-.236.853-.518 1.181-.137.16-.28.334-.117.615.163.279.725 1.196 1.554 1.932.828.736 1.528.962 1.808 1.1.28.139.44.113.6-.07.162-.185.7-.813.88-1.092.178-.278.358-.232.602-.142.245.09 1.56.735 1.829.87.268.133.447.2.512.311.066.111.066.643-.178 1.331z"/>
-            </svg>
-            Enviar via WhatsApp
-        </button>
-    </form>
-    
-    <div class="footer">🔒 Seus dados estão seguros e criptografados.</div>
+    <div class="valor-box">
+        <div class="valor-label">Valor Disponível</div>
+        <div class="valor-disponivel">R$ 2.387,76</div>
+    </div>
+
+    <div class="instrucoes">
+        <h3>Siga as instruções para resgatar seu CashBack:</h3>
+        <ol>
+            <li>Insira seus dados para receber o pagamento.</li>
+            <li>Abaixo, baixe o aplicativo oficial.</li>
+            <li>Faça as verificações necessárias dentro do app para liberar o saldo.</li>
+        </ol>
+    </div>
+
+    <!-- Substitua o '#' pelo link direto do download do seu app -->
+    <a href="#" class="btn-download">
+        📲 Baixar Aplicativo Agora
+    </a>
+
+    <div class="footer-text">
+        Conexão segura SSL. Seus dados estão protegidos.
+    </div>
 </div>
-
-<script>
-    // Máscara dinâmica para o campo de faturamento (Digita apenas números e formata em Reais)
-    document.getElementById('renda').addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, "");
-        value = (value / 100).toFixed(2) + "";
-        value = value.replace(".", ",");
-        value = value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
-        e.target.value = value ? "R$ " + value : "";
-    });
-
-    document.getElementById('cashbackForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Coleta dos dados preenchidos pelo cliente
-        const nome = document.getElementById('nome').value;
-        const documento = document.getElementById('documento').value;
-        const telefone = document.getElementById('telefone').value;
-        const renda = document.getElementById('renda').value;
-        
-        // Número configurado (Com DDI 55 do Brasil)
-        const numeroWhats = '5554999422678'; 
-        
-        // Formatação profissional e organizada da mensagem que chegará para você
-        const mensagem = `Olá! Acabei de preencher o formulário para análise de Cashback.%0A%0A` +
-                         `👤 *Nome:* ${encodeURIComponent(nome)}%0A` +
-                         `🆔 *CPF/CNPJ:* ${encodeURIComponent(documento)}%0A` +
-                         `📱 *Telefone:* ${encodeURIComponent(telefone)}%0A` +
-                         `💳 *Faturamento Mensal:* ${encodeURIComponent(renda)}%0A%0A` +
-                         `Aguardo a minha análise analítica!`;
-        
-        // Link oficial da API do WhatsApp
-        const urlCompleta = `https://api.whatsapp.com/send?phone=${numeroWhats}&text=${mensagem}`;
-        
-        // Redireciona o usuário para o app ou web WhatsApp em nova aba
-        window.open(urlCompleta, '_blank');
-    });
-</script>
 
 </body>
 </html>
